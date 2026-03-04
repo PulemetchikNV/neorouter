@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { ErrorBoundary as AppErrorBoundary } from "./components/ErrorBoundary";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -74,15 +75,11 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     stack = error.stack;
   }
 
+  const DEFAULT_404_MSG = 'The page you are looking for does not exist.';
+
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
+    <main className="d-flex justify-center w-100 container mx-auto">
+      <AppErrorBoundary message={message || DEFAULT_404_MSG} stack={stack} details={details} />
     </main>
   );
 }
