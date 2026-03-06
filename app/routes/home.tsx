@@ -11,7 +11,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <div>
-      <Header />
+      home
     </div>
   );
 }
