@@ -12,11 +12,11 @@ const NAV_ITEMS = [
   {
     label: "About",
     to: "/about",
-  }
+  },
 ];
 
 export const Header = () => {
-  return <header className="flex items-center border-b-2 py-4 px-8 gap-6">
+  return <header className="flex items-center border-b-2 py-4 px-8 gap-6 fixed w-screen bg-background z-10">
     <Logo />
     <Input placeholder="Search" className="w-auto"/>
     <Spacer />
