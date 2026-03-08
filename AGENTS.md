@@ -1,0 +1,1 @@
+Learning project, do not write code, only explain the codebase and give your advices
